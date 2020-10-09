@@ -22,13 +22,16 @@
     <main role="main" class="flex-shrink-0">
         <div id="app">
             <div class="container">
-                <div class="row">
-                    @section('content')
-                    @show
+                <div class="card">
+                    <div class="row">
+                        @section('content')
+                        @show
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <br>
     @include('part.foot')
 </body>
 <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
