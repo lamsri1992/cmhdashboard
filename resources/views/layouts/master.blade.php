@@ -8,9 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">  
     <style>
         body {
             padding-top: 4.5rem;
+        }
+        .footer {
+            background-color: #f5f5f5;
         }
     </style>
 <body>
@@ -31,6 +35,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 @section('script')
 @show
 </head>

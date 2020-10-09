@@ -41,7 +41,7 @@ class DashboardController extends Controller
                     ->leftJoin('menu_items', 'sub_items.sub_group', '=', 'menu_items.group_id')
                     ->where('sub_items.sub_id', $parm_id)
                     ->first();
-        return view('show', ['dashboard' => $dashboard]);
+        return view('dashboard.show', ['dashboard' => $dashboard]);
     }
 
     /**

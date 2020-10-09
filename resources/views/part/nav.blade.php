@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">หน้าหลัก</a>
+                <a class="nav-link" href="/dashboard">หน้าหลัก</a>
             </li>
             @foreach ($menuItems as $item)
             <li class="nav-item dropdown">
@@ -18,7 +18,7 @@
               <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
                 @foreach ($subItems as $subitem)
                 @if ($item->group_id == $subitem->sub_group)
-                  <a class="dropdown-item" href="{{ route('show',base64_encode($subitem->sub_id))}}">
+                  <a class="dropdown-item" href="{{ route('dashboard.show',base64_encode($subitem->sub_id))}}">
                       {{$subitem->sub_name}}
                   </a>
                 @endif

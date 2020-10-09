@@ -18,5 +18,5 @@ Route::get('/', function () { return view('index'); });
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', function () { return view('index'); });
-    Route::get('/show/{id}','DashboardController@show')->name('show');
+    Route::get('/{id}','DashboardController@show')->name('dashboard.show');
 });
