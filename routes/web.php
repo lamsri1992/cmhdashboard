@@ -21,6 +21,5 @@ Route::group(['prefix' => 'dashboard'], function () {
 });
 
 Route::group(['prefix' => 'backend'], function () {
-    Route::get('/', function () { return view('backend.index'); });
-    Route::get('/{id}','DashboardController@show')->name('backend.index');
+    Route::get('/','BackendController@index')->name('backend.index');
 });
