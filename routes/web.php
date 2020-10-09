@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { return view('index'); });
-// Route::get('/show/{id}','DashboardController@show')->name('show');
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', function () { return view('index'); });
     Route::get('/{id}','DashboardController@show')->name('dashboard.show');
+});
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::get('/', function () { return view('backend.index'); });
+    Route::get('/{id}','DashboardController@show')->name('backend.index');
 });
