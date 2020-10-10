@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/dashboard/dashboard.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">  
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         main {
             padding-top: 1.5rem;
@@ -34,11 +35,14 @@
     <br>
     @include('backend.part.foot')
 </body>
+@include('sweetalert::alert')
 <script src="{{asset('js/app.js')}}" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 @section('script')
 @show
 </head>

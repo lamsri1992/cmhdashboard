@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <h2><i class="fa fa-chart-pie"></i> ข้อมูลรายงาน</h2>
+    <h5><i class="fa fa-chart-pie"></i> ข้อมูลรายงาน</h5>
 </div>
 <div class="card-body">
     <div class="col-md-12">
@@ -32,7 +32,7 @@
               @endif
               <span style="font-size: 13px;" class="badge badge-pill badge-{{$badge}}"> {{$text}}</span>
             </td>
-            <td class="text-center"><a href="#" class="btn btn-sm btn-info">Edit</a></td>
+            <td class="text-center"><a href="#" class=""><i class="fa fa-edit"></i> แก้ไข</a></td>
           </tr>
           @endforeach
           </tbody>

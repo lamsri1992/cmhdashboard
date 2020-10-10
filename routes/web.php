@@ -22,4 +22,8 @@ Route::group(['prefix' => 'dashboard'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::get('/','BackendController@index')->name('backend.index');
+    Route::get('/menu','MenuController@index')->name('backend.menu');
+    Route::get('/menustore','MenuController@store')->name('backend.menustore');
+    Route::get('/report','ReportController@index')->name('backend.report');
+    Route::get('/reportstore','ReportController@store')->name('backend.reportstore');
 });
