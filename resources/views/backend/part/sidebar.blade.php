@@ -2,17 +2,17 @@
     <div class="sidebar-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" href="/backend">
+          <a class="nav-link {{(request()->is('backend')) ? 'active' : ''}}" href="/backend">
             <i class="fa fa-home"></i> หน้าแรก
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/backend/menu">
+          <a class="nav-link {{(request()->is('backend/menu*')) ? 'active' : ''}}" href="/backend/menu">
             <i class="fa fa-sitemap"></i> จัดการเมนูระบบ
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/backend/report">
+          <a class="nav-link {{(request()->is('backend/report*')) ? 'active' : ''}}" href="/backend/report">
             <i class="fa fa-tasks"></i> จัดการรายงาน
           </a>
         </li>

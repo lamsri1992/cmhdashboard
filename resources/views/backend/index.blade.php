@@ -14,8 +14,8 @@
               <th class="text-center">ID</th>
               <th>Dashboard Group</th>
               <th>Report Name</th>
+              <th>Source Embed</th>
               <th class="text-center">Status</th>
-              <th class="text-center"><i class="fa fa-edit"></i></th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +24,7 @@
             <td class="text-center">{{$result->sub_id}}</td>
             <td>{{$result->group_name}}</td>
             <td>{{$result->sub_name}}</td>
+            <td><a href="{{$result->sub_src}}" target="_blank">{{$result->sub_src}}</a></td>
             <td class="text-center">
               @if ($result->sub_active=='Y')
               <?php $badge = "success"; $text = "แสดง"; ?>
@@ -32,7 +33,6 @@
               @endif
               <span style="font-size: 13px;" class="badge badge-pill badge-{{$badge}}"> {{$text}}</span>
             </td>
-            <td class="text-center"><a href="#" class=""><i class="fa fa-edit"></i> แก้ไข</a></td>
           </tr>
           @endforeach
           </tbody>
