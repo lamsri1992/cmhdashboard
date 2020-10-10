@@ -35,7 +35,11 @@
                   @endif
                   <span style="font-size: 13px;" class="badge badge-pill badge-{{$badge}}"> {{$text}}</span>
                 </td>
-                <td class="text-center"><a href="#" class=""><i class="fa fa-edit"></i> แก้ไข</a></td>
+                <td class="text-center">
+                    <a href="{{route('backend.menu_show',$result->group_id)}}">
+                        <i class="fa fa-edit"></i> แก้ไข
+                    </a>
+                </td>
               </tr>
               @endforeach
               </tbody>

@@ -35,7 +35,6 @@ class ReportController extends Controller
                 'sub_name' => $request->get('sub_name'),
                 'sub_src' => $request->get('sub_src'),
                 'sub_group' => $request->get('sub_group'),
-                // 'sub_order' => $request->get('sub_order'),
                 'sub_active' => $request->get('sub_active'),
             ]
         );
@@ -49,7 +48,13 @@ class ReportController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('sub_items')
+                ->leftJoin('menu_items', 'sub_items.sub_group', '=', 'menu_items.group_id')
+                ->where('sub_items.sub_id', $id)
+                ->first();
+        $menu = DB::table('menu_items')
+                    ->get();
+        return view('backend.report_show', ['data' => $data],['menu' => $menu]);
     }
 
     /**
@@ -61,7 +66,15 @@ class ReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('sub_items')->where('sub_id', $id)->update(
+            [
+                'sub_name' => $request->get('sub_name'),
+                'sub_src' => $request->get('sub_src'),
+                'sub_group' => $request->get('sub_group'),
+                'sub_order' => $request->get('sub_order'),
+                'sub_active' => $request->get('sub_active'),
+            ]
+        );
     }
 
     /**

@@ -43,7 +43,10 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('menu_items')
+                ->where('menu_items.group_id', $id)
+                ->first();
+        return view('backend.menu_show', ['data' => $data]);
     }
 
     /**
@@ -55,7 +58,12 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('menu_items')->where('group_id', $id)->update(
+            [
+                'group_name' => $request->get('group_name'),
+                'group_active' => $request->get('group_active')
+            ]
+        );
     }
 
     /**
