@@ -31,3 +31,7 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/reportshow/{id}','ReportController@show')->name('backend.report_show');
     Route::get('/reportupdate/{id}','ReportController@update')->name('backend.reportupdate');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
