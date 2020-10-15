@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title',"CMH :: DASHBOARD")
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,7 +8,7 @@
                 <div class="text-center">
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                           <h2>Login :: CM-DDS</h2>
+                           <h2><i class="fa fa-sign-in-alt"></i> Login :: CM-DDS</h2>
                         </div>
                     </div>
                 </div>

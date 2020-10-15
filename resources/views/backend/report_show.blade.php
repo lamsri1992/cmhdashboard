@@ -2,12 +2,10 @@
 @section('title',"CMH :: ADMINISTRATOR")
 @section('content')
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/backend/report">จัดการรายงาน</a></li>
-        <li class="breadcrumb-item active" aria-current="page">{{$data->sub_id}} :: {{$data->sub_name}}</li>
-    </ol>
-</nav>
+<div class="card-header">
+    <a href="/backend/report">จัดการรายงาน</a> / 
+    <span>{{$data->sub_id}} :: {{$data->sub_name}}</span>
+</div>
 
 <div class="card-body">
     <div class="col-md-12">
@@ -45,8 +43,8 @@
             <div class="form-group">
             <label for="">สถานะ</label>
                 <select name="sub_active" class="custom-select mr-sm-2" required>
-                    <option value="Y" {{$check}}>- แสดง</option>
-                    <option value="N" {{$check}}>- ปกปิด</option>
+                    <option value="Y" {{$check}}>แสดง</option>
+                    <option value="N" {{$check}}>ปกปิด</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary btn-sm">บันทึกการแก้ไข</button>

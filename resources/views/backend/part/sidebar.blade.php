@@ -13,6 +13,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link {{(request()->is('backend/report*')) ? 'active' : ''}}" href="/backend/report">
+            <i class="fa fa-chart-pie"></i> จัดการ Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{(request()->is('backend/table*')) ? 'active' : ''}}" href="/backend/table">
             <i class="fa fa-tasks"></i> จัดการรายงาน
           </a>
         </li>

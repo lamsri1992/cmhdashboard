@@ -71,8 +71,8 @@
                         <div class="col-sm-10">
                             <select name="group_active" class="custom-select mr-sm-2" required>
                                 <option value="">เลือก...</option>
-                                <option value="Y">- แสดง</option>
-                                <option value="N">- ปกปิด</option>
+                                <option value="Y">แสดง</option>
+                                <option value="N">ปกปิด</option>
                             </select>
                         </div>
                     </div>
