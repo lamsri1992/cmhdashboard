@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <h5><i class="fa fa-chart-pie"></i> ข้อมูลรายงาน</h5>
+    <span><i class="fa fa-chart-pie"></i> ข้อมูลรายงาน</span>
 </div>
 <div class="card-body">
     <div class="col-md-12">

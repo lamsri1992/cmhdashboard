@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="card-header">
-    <h5><i class="fa fa-sitemap"></i> จัดการเมนูระบบ</h5>
+    <span><i class="fa fa-sitemap"></i> จัดการเมนูระบบ</span>
 </div>
 <div class="card-body">
     <div class="col-md-12">
         <div class="text-right" style="padding-bottom: 1.2rem;">
             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#MenuModal">
-                <i class="fa fa-plus-circle"></i> เพิ่มเมนูหลัก
+                <i class="fa fa-plus-circle"></i> เพิ่มเมนูระบบ
             </button>
         </div>
         <div class="table-responsive">

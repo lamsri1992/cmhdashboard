@@ -30,7 +30,13 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/reportstore','ReportController@store')->name('backend.reportstore');
     Route::get('/reportshow/{id}','ReportController@show')->name('backend.report_show');
     Route::get('/reportupdate/{id}','ReportController@update')->name('backend.reportupdate');
+    Route::get('/table','TableController@index')->name('backend.table');
+    Route::get('/table_new', function () { return view('backend.table_new'); });
+    Route::get('/tablestore','TableController@store')->name('backend.tablestore');
+    Route::get('/table_show/{id}','TableController@show')->name('backend.table_show');
 });
+
+
 
 Auth::routes();
 

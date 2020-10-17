@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <a href="/backend/report">จัดการรายงาน</a> / 
+    <a href="/backend/report">จัดการ Dashboard</a> / 
     <span>{{$data->sub_id}} :: {{$data->sub_name}}</span>
 </div>
 
