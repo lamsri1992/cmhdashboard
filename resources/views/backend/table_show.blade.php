@@ -12,45 +12,48 @@
             <label>ชื่อตารางข้อมูล</label>
             <input type="text" name="table_name" class="form-control" value="{{ $data->table_name }}">
         </div>
+        <?php $value = explode(',',$data->table_level); ?>
         <div class="form-group">
             <label>กำหนดสิทธิ์การเข้าถึงข้อมูล</label>
             <div class="col-md-12">
                 <div class="checkbox">
                     <label for="permission-0">
-                        <input type="checkbox" name="table_level[]" id="permission-0" value="3">
+                        <input type="checkbox" name="table_level[]" id="permission-0" value="3"
+                            <?php echo in_array(3,$value) ? "CHECKED" : ""; ?>>
                         ระดับ :: จังหวัด
                     </label>
                 </div>
                 <div class="checkbox">
                     <label for="permission-1">
-                        <input type="checkbox" name="table_level[]" id="permission-1" value="4">
+                        <input type="checkbox" name="table_level[]" id="permission-1" value="4"
+                            <?php echo in_array(4,$value) ? "CHECKED" : ""; ?>>
                         ระดับ :: อำเภอ
                     </label>
                 </div>
                 <div class="checkbox">
                     <label for="permission-2">
-                        <input type="checkbox" name="table_level[]" id="permission-2" value="5">
+                        <input type="checkbox" name="table_level[]" id="permission-2" value="5"
+                            <?php echo in_array(5,$value) ? "CHECKED" : ""; ?>>
                         ระดับ :: รพ.สต.
                     </label>
                 </div>
             </div>
         </div>
         @if($data->table_active == 'N')
-            <?php $check = "SELECTED"; ?>
+            <?php $selected = "SELECTED"; ?>
         @else
-            <?php $check = ""; ?>
+            <?php $selected = ""; ?>
         @endif
         <div class="form-group">
             <label for="">สถานะ</label>
             <select name="sub_active" class="custom-select mr-sm-2" required>
-                <option value="Y" {{ $check }}>แสดง</option>
-                <option value="N" {{ $check }}>ปกปิด</option>
+                <option value="Y" {{ $selected }}>แสดง</option>
+                <option value="N" {{ $selected }}>ปกปิด</option>
             </select>
         </div>
         <div class="form-group">
             <label>คำสั่ง :: Query SQL</label>
-            <textarea name="table_query" class="form-control" rows="6"
-                placeholder="SELECT some_column FROM some_table">{{ $data->table_query }}</textarea>
+            <textarea name="table_query" class="form-control" rows="6">{{ $data->table_query }}</textarea>
         </div>
         <div class="form-group">
             <label>กำหนดหัวตาราง</label>
@@ -81,60 +84,33 @@
         </div>
     </div>
 </div>
-<?php $raws_json = json_encode($raws); ?>
 @endsection
 @section('script')
 <script>
-    // var dataSet = {!! json_encode($raws) !!}
-    // var dataSet = @json($raws);
-    var dataSet = [
-        [
-            "Tiger Nixon",
-            "System Architect",
-            "Edinburgh",
-        ],
-        [
-            "Garrett Winters",
-            "Accountant",
-            "Tokyo",
-        ],
-        [
-            "Ashton Cox",
-            "Junior Technical Author",
-            "San Francisco",
-        ],
-        [
-            "Cedric Kelly",
-            "Senior Javascript Developer",
-            "Edinburgh",
-        ],
-        [
-            "Airi Satou",
-            "Accountant",
-            "Tokyo",
-        ],
-        [
-            "Brielle Williamson",
-            "Integration Specialist",
-            "New York",
-        ],
-        [
-            "Herrod Chandler",
-            "Sales Assistant",
-            "San Francisco",
-        ],
-        [
-            "Rhona Davidson",
-            "Integration Specialist",
-            "Tokyo",
-        ],
-    ]
-    $(document).ready(function () {
-        $('#example').DataTable({
-            searching: false,
-            data: dataSet,
-        });
-    });
+    var report = @json($raws);
+    var col = [];
+
+    for (var i = 0; i < report.length; i++) {
+        for (var key in report[i]) {
+            if (col.indexOf(key) === -1) {
+                col.push(key);
+            }
+        }
+    }
+    var xtable = document.getElementById("cmTable");
+    var table = document.querySelector('#cmTable tbody');
+
+    var tr = table.insertRow(-1);
+
+    for (var i = 0; i < report.length; i++) {
+        tr = table.insertRow(-1);
+        for (var j = 0; j < col.length; j++) {
+            var tabCell = tr.insertCell(-1);
+            tabCell.innerHTML = report[i][col[j]];
+        }
+    }
+
+    xtable.setAttribute('class', 'table table-striped table-sm table-bordered');
 
 </script>
 @endsection
