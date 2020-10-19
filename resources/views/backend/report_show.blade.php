@@ -24,11 +24,19 @@
         </div>
         <div class="form-group">
             <label for="">ชื่อรายงาน</label>
-            <input type="text" name="sub_name" class="form-control" value="{{ $data->sub_name }}">
+            <input type="text" name="sub_name" class="form-control" value="{{ $data->sub_name }}" required>
         </div>
         <div class="form-group">
             <label for="">Source Embed</label>
-            <input type="text" name="sub_src" class="form-control" value="{{ $data->sub_src }}">
+            <textarea name="sub_src" class="form-control" rows="3" required>{{ $data->sub_src }}</textarea>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <input type="text" name="sub_width" class="form-control" value="{{ $data->sub_width }}" required>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" name="sub_height" class="form-control" value="{{ $data->sub_height }}" required>
+            </div>
         </div>
         <div class="form-group">
             <label for="">Order</label>

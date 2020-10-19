@@ -12,5 +12,7 @@ class SubItem extends Model
         'sub_group',
         'sub_order',
         'sub_active',
+        'sub_width',
+        'sub_height',
     ];
 }

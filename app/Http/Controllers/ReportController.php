@@ -36,6 +36,8 @@ class ReportController extends Controller
                 'sub_src' => $request->get('sub_src'),
                 'sub_group' => $request->get('sub_group'),
                 'sub_active' => $request->get('sub_active'),
+                'sub_width' => $request->get('sub_width'),
+                'sub_height' => $request->get('sub_height'),
             ]
         );
     }
@@ -73,6 +75,8 @@ class ReportController extends Controller
                 'sub_group' => $request->get('sub_group'),
                 'sub_order' => $request->get('sub_order'),
                 'sub_active' => $request->get('sub_active'),
+                'sub_width' => $request->get('sub_width'),
+                'sub_height' => $request->get('sub_height'),
             ]
         );
     }

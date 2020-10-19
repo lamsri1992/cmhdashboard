@@ -55,14 +55,14 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="MenuModal"><i class="fa fa-plus-circle"></i> เพิ่มรายงาน</h5>
+                    <h5 class="modal-title" id="MenuModal"><i class="fa fa-plus-circle"></i> เพิ่ม Dashboard</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">เมนูหลัก</label>
+                        <label for="" class="col-sm-2 col-form-label">ชื่อเมนูหลัก</label>
                         <div class="col-sm-10">
                             <select class="basic-single" name="sub_group">
                                 <option value="">เลือก...</option>
@@ -79,9 +79,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">แหล่งข้อมูล</label>
+                        <label for="" class="col-sm-2 col-form-label">Embed</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sub_src" class="form-control" required>
+                            <textarea name="sub_src" class="form-control" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Size</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="sub_width" class="form-control" placeholder="กำหนดความกว้าง" required>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" name="sub_height" class="form-control" placeholder="กำหนดความสูง" required>
                         </div>
                     </div>
                     <div class="form-group row">
