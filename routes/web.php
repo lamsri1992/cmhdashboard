@@ -34,6 +34,7 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/table_new', function () { return view('backend.table_new'); });
     Route::get('/tablestore','TableController@store')->name('backend.tablestore');
     Route::get('/table_show/{id}','TableController@show')->name('backend.table_show');
+    Route::get('/tableupdate/{id}','TableController@update')->name('backend.tableupdate');
 });
 
 

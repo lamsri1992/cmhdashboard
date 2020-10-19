@@ -97,9 +97,10 @@
             }
         }
     }
-    var xtable = document.getElementById("cmTable");
+    var tables = document.querySelector('table');
+    tables.setAttribute('id', 'cmTable');
+    var xtable = document.getElementById('cmTable');
     var table = document.querySelector('#cmTable tbody');
-
     var tr = table.insertRow(-1);
 
     for (var i = 0; i < report.length; i++) {
@@ -122,8 +123,8 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    // url: "{{ route('backend.reportupdate',$data->table_id) }}",
-                    data: $('#updateMenu').serialize(),
+                    url: "{{ route('backend.tableupdate',$data->table_id) }}",
+                    data: $('#updateTable').serialize(),
                     success: function (data) {
                         Swal.fire({
                             icon: 'success',

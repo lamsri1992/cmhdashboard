@@ -68,7 +68,21 @@ class TableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $arr_where = array();
+        foreach($request->get('table_level') as $level){ 
+            $arr_where[] = $level;
+        }
+        $levels = implode(",",$arr_where);
+
+        DB::table('table_queries')->where('table_id', $id)->update(
+            [
+                'table_name' => $request->get('table_name'),
+                'table_query' => $request->get('table_query'),
+                'table_html' => $request->get('table_html'),
+                'table_level' => $levels,
+                'table_active' => $request->get('table_active'),
+            ]
+        );
     }
 
     /**
