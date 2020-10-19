@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <span><i class="fa fa-chart-pie"></i> ข้อมูลรายงาน</span>
+    <span><i class="fa fa-home"></i> Home : Dashboard</span>
 </div>
 <div class="card-body">
     <div class="table-responsive">

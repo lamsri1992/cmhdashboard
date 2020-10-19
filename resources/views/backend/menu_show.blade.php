@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <a href="/backend/menu">จัดการเมนูระบบ</a> /
+    <a href="/backend/menu">Dashboard Group</a> /
     <span>{{ $data->group_id }} :: {{ $data->group_name }}</span>
 </div>
 

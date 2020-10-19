@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <span><i class="fa fa-tasks"></i> จัดการรายงาน</span>
+    <span><i class="fa fa-table"></i> Dataset Report</span>
 </div>
 <div class="card-body">
     <div class="text-right" style="padding-bottom: 1.2rem;">

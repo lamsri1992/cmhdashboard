@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <span><i class="fa fa-chart-pie"></i> จัดการ Dashboard</span>
+    <span><i class="fa fa-chart-pie"></i> Dashboard List</span>
 </div>
 <div class="card-body">
     <div class="text-right" style="padding-bottom: 1.2rem;">

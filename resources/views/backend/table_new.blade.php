@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <span><i class="fa fa-plus-circle"></i> เพิ่มตารางข้อมูล</span>
+    <span><i class="fa fa-plus-circle"></i> New Dataset Report</span>
 </div>
 <div class="card-body">
     <form id="addTable">

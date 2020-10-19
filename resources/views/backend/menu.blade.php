@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-header">
-    <span><i class="fa fa-sitemap"></i> จัดการเมนูระบบ</span>
+    <span><i class="fa fa-sitemap"></i> Dashboard Group</span>
 </div>
 <div class="card-body">
     <div class="text-right" style="padding-bottom: 1.2rem;">
