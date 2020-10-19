@@ -22,7 +22,7 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.chartjs.org/samples/latest/legend/point-style.html"></iframe>
                 </div>
-                <table id="example" class="table table-border table-striped" style="width:100%">
+                <table class="table table-border table-striped table-sm" style="width:100%">
                     <thead class="thead-dark">
                         <tr>
                             <th>Name</th>
@@ -187,16 +187,6 @@
                             <td>$132,000</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
