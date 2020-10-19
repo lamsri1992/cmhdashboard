@@ -42,13 +42,11 @@
                             <div class="input-group">
                                 <input id="cpLink{{ $tables->table_id }}" type="text" class="form-control"
                                     value="{{ $getHost."/report"."/".base64_encode($tables->table_id) }}"
-                                    readonly>
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-sm btn-secondary copyLink"
-                                        data-id="{{ $tables->table_id }}">
-                                        <i class="fa fa-copy"></i> URL
-                                    </button>
-                                </div>
+                                    hidden>
+                                <button type="button" class="btn btn-sm btn-secondary copyLink"
+                                    data-id="{{ $tables->table_id }}">
+                                    <i class="fa fa-copy"></i> URL
+                                </button>
                             </div>
                         </td>
                     </tr>
@@ -70,7 +68,7 @@
         var textBox = document.getElementById("cpLink" + id);
         textBox.select();
         document.execCommand("copy");
-        alert("Copied to Clipboard\n"+textBox.value);
+        alert("Copied to Clipboard\n" + textBox.value);
     });
 
 </script>
