@@ -141,4 +141,8 @@
     });
 
 </script>
+<script>
+    CKEDITOR.replace('summary-ckeditor');
+
+</script>
 @endsection

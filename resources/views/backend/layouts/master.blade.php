@@ -55,7 +55,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
-<script>CKEDITOR.replace('summary-ckeditor');</script>
+{{-- <script>CKEDITOR.replace('summary-ckeditor');</script> --}}
 @section('script')
 @show
 </head>

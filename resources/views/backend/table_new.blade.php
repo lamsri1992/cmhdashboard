@@ -44,7 +44,8 @@
         </div>
         <div class="form-group">
             <label>คำสั่ง :: Query SQL</label>
-            <textarea name="table_query" class="form-control" rows="6" placeholder="SELECT some_column FROM some_table"></textarea>
+            <textarea name="table_query" class="form-control" rows="6"
+                placeholder="SELECT some_column FROM some_table"></textarea>
         </div>
         <div class="form-group">
             <label>กำหนดหัวตาราง</label>
@@ -86,5 +87,10 @@
             }
         })
     });
+
+</script>
+<script>
+    CKEDITOR.replace('summary-ckeditor');
+
 </script>
 @endsection
