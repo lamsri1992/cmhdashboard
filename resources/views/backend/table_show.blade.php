@@ -7,7 +7,7 @@
 </div>
 
 <div class="card-body">
-    <form id="addTable">
+    <form id="updateTable">
         <div class="form-group">
             <label>ชื่อตารางข้อมูล</label>
             <input type="text" name="table_name" class="form-control" value="{{ $data->table_name }}">
@@ -111,6 +111,34 @@
     }
 
     xtable.setAttribute('class', 'table table-striped table-sm table-bordered');
+
+    $('#updateTable').on("submit", function (event) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'ยืนยันการบันทึกรายการ ?',
+            showCancelButton: true,
+            confirmButtonText: `บันทึก`,
+            cancelButtonText: `ยกเลิก`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    // url: "{{ route('backend.reportupdate',$data->table_id) }}",
+                    data: $('#updateMenu').serialize(),
+                    success: function (data) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'บันทึกรายการสำเร็จ',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                        window.setTimeout(function () {
+                            location.replace('/backend/table')
+                        }, 1500);
+                    }
+                });
+            }
+        })
+    });
 
 </script>
 @endsection

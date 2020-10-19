@@ -24,11 +24,9 @@
     @include('part.nav')
     <main role="main" class="flex-shrink-0">
         <div id="app">
-            <div class="container">
-                <div class="card">
-                    @section('content')
-                    @show
-                </div>
+            <div class="container-fluid">
+                @section('content')
+                @show
             </div>
         </div>
     </main>

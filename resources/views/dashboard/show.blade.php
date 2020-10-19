@@ -1,17 +1,14 @@
 @extends('layouts.master')
 @section('title',"CMH :: DASHBOARD")
 @section('content')
-@include('part.breadcrumb')
 
-<div class="card-body">
-    <div class="row">
-        <div class="card-body">
-            <div class="col-md-12">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="{{$dashboard->sub_src}}"></iframe>
-                </div>
-            </div>
-        </div>
+<div class="col-lg-12">
+    <span class="text-secondary">{{ $dashboard->group_name }}</span>
+    <h2>{{ $dashboard->sub_name }}</h2>
+    <div class="col-lg-12" style="text-align: center;margin: 0 auto">
+        <iframe width="100%" height="800px" src="{{ $dashboard->sub_src }}" frameborder="0" style="border:0"
+            allowfullscreen>
+        </iframe>
     </div>
 </div>
 
