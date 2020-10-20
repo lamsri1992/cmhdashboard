@@ -16,6 +16,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th class="text-center">ID</th>
+                    <th>Dashboard Group</th>
                     <th>Dashboard Name</th>
                     <th>Source Embed</th>
                     <th class="text-center">Status</th>
@@ -26,8 +27,9 @@
                 @foreach($response as $result)
                     <tr>
                         <td class="text-center">{{ $result->sub_id }}</td>
+                        <td>{{ $result->group_name }}</td>
                         <td>{{ $result->sub_name }}</td>
-                        <td><a href="{{ $result->sub_src }}" target="_blank">{{ $result->sub_src }}</a></td>
+                        <td><a href="{{ $result->sub_src }}" target="_blank">{{ SUBSTR($result->sub_src,0,50) }}...</a></td>
                         <td class="text-center">
                             @if($result->sub_active=='Y')
                                 <?php $badge = "success"; $text = "แสดง"; ?>
