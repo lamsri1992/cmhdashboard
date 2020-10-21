@@ -101,7 +101,8 @@
     tables.setAttribute('id', 'cmTable');
     var xtable = document.getElementById('cmTable');
     var table = document.querySelector('#cmTable tbody');
-    var tr = table.insertRow(-1);
+    
+    // var tr = table.insertRow(-1);
 
     for (var i = 0; i < report.length; i++) {
         tr = table.insertRow(-1);
@@ -110,8 +111,12 @@
             tabCell.innerHTML = report[i][col[j]];
         }
     }
-
+    
     xtable.setAttribute('class', 'table table-striped table-sm table-bordered');
+
+    $(document).ready(function () {
+        $('#cmTable').DataTable({});
+    });
 
     $('#updateTable').on("submit", function (event) {
         event.preventDefault();

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class TableController extends Controller
+class DatasetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class TableController extends Controller
      */
     public function index()
     {
-        $response = DB::table('table_queries')->get();
-        return view('backend.table', ['response' => $response]);
+        //
     }
 
     /**
@@ -26,21 +25,7 @@ class TableController extends Controller
      */
     public function store(Request $request)
     {
-        $arr_where = array();
-        foreach($request->get('table_level') as $level){ 
-            $arr_where[] = $level;
-        }
-        $levels = implode(",",$arr_where);
-
-        DB::table('table_queries')->insert(
-            [
-                'table_name' => $request->get('table_name'),
-                'table_query' => $request->get('table_query'),
-                'table_html' => $request->get('table_html'),
-                'table_level' => $levels,
-                'table_active' => $request->get('table_active'),
-            ]
-        );
+        //
     }
 
     /**
@@ -63,7 +48,7 @@ class TableController extends Controller
          */
         $query = str_replace('{hcode}','23736', $query);
         $raws = DB::select(DB::raw($query));
-        return view('backend.table_show', ['data' => $data],['raws' => $raws]);
+        return view('report.show', ['data' => $data],['raws' => $raws]);
     }
 
     /**
@@ -75,21 +60,7 @@ class TableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $arr_where = array();
-        foreach($request->get('table_level') as $level){ 
-            $arr_where[] = $level;
-        }
-        $levels = implode(",",$arr_where);
-
-        DB::table('table_queries')->where('table_id', $id)->update(
-            [
-                'table_name' => $request->get('table_name'),
-                'table_query' => $request->get('table_query'),
-                'table_html' => $request->get('table_html'),
-                'table_level' => $levels,
-                'table_active' => $request->get('table_active'),
-            ]
-        );
+        //
     }
 
     /**

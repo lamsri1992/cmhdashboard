@@ -30,7 +30,7 @@
                     <tr>
                         <td class="text-center">{{ $tables->table_id }}</td>
                         <td>{{ $tables->table_name }}</td>
-                        <td>{{ $tables->table_query }}</td>
+                        <td>{{ SUBSTR($tables->table_query,0,30) }}...</td>
                         <td class="text-center">{{ $tables->table_level }}</td>
                         <td class="text-center">
                             <a href="{{ route('backend.table_show',$tables->table_id) }}"

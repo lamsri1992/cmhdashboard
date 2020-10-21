@@ -20,6 +20,10 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/{id}','DashboardController@show')->name('dashboard.show');
 });
 
+Route::group(['prefix' => 'report'], function () {
+    Route::get('/{id}','DatasetController@show')->name('report.show');
+});
+
 Route::group(['prefix' => 'backend'], function () {
     Route::get('/','BackendController@index')->name('backend.index');
     Route::get('/menu','MenuController@index')->name('backend.menu');
@@ -36,9 +40,3 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/table_show/{id}','TableController@show')->name('backend.table_show');
     Route::get('/tableupdate/{id}','TableController@update')->name('backend.tableupdate');
 });
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
