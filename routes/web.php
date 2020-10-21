@@ -20,8 +20,9 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/{id}','DashboardController@show')->name('dashboard.show');
 });
 
-Route::group(['prefix' => 'report'], function () {
-    Route::get('/{id}','DatasetController@show')->name('report.show');
+Route::group(['prefix' => 'dataset'], function () {
+    Route::get('/', function () { return view('index'); });
+    Route::get('/{id}','DatasetController@show')->name('dataset.show');
 });
 
 Route::group(['prefix' => 'backend'], function () {

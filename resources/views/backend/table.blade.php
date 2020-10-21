@@ -41,7 +41,7 @@
                         <td class="text-center">
                             <div class="input-group">
                                 <input id="cpLink{{ $tables->table_id }}" type="text" class="form-control"
-                                    value="{{ $getHost."/report"."/".base64_encode($tables->table_id) }}"
+                                    value="{{ $getHost."/dataset"."/".($tables->table_id) }}"
                                     readonly>
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-sm btn-secondary copyLink"
