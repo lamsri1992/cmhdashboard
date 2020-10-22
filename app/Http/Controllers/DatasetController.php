@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 
 class DatasetController extends Controller
 {
@@ -36,17 +37,20 @@ class DatasetController extends Controller
      */
     public function show($id)
     {
+        $userID = Auth::user()->id; 
+        $hos = DB::table('sys_member')
+                    ->leftJoin('sys_admin', 'sys_member.username', '=', 'sys_admin.username')
+                    ->leftJoin('chospital', 'sys_member.officename', '=', 'chospital.hoscode')
+                    ->where('sys_admin.id', $userID)
+                    ->first();
+        $hcode = $hos->hoscode;
+        $aumphur = $hos->distcode;
+
         $data = DB::table('table_queries')
                 ->where('table_queries.table_id', $id)
                 ->first();
         $query = $data->table_query;
-        // check $level = session->login.level
-        // replace $hcode = session->login.hcode
-        // replace $amphur = session->login.aumphur
-        /**
-         * Replace Request -> Session
-         */
-        $query = str_replace('{hcode}','23736', $query);
+        $query = str_replace('{hcode}',$hcode, $query);
         $raws = DB::select(DB::raw($query));
         return view('report.show', ['data' => $data],['raws' => $raws]);
     }

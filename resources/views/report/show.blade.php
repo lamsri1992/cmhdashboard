@@ -1,14 +1,21 @@
 @extends('layouts.master')
 @section('title',"CMH :: DASHBOARD")
 @section('content')
-
+{{-- u00551 --}}
 <div class="col-lg-12">
+
+
     <h2> {{ $data->table_name }}</h2>
-    <h2> Current Permission {{ Auth::user()->level }}</h2>
-    <h2> Dataset Permission {{ $data->table_level }}</h2>
-    @if($data->table_level <> Auth::user()->level)
-        {{ 'Invalid Permission' }}
+    <p> Current Permission {{ Auth::user()->dlevel }}</p>
+    <p> Dataset Permission {{ $data->table_level }}</p>
+    
+    <?php $array = explode(',',$data->table_level); ?>
+    @if(in_array(Auth::user()->dlevel, $array))
+        {{ 'Valid' }}
+    @else
+        {{ 'Invalid' }}
     @endif
+
     <div class="col-lg-12">
         {!! $data->table_html !!}
     </div>
