@@ -41,3 +41,7 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/table_show/{id}','TableController@show')->name('backend.table_show');
     Route::get('/tableupdate/{id}','TableController@update')->name('backend.tableupdate');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

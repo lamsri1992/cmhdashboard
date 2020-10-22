@@ -4,6 +4,11 @@
 
 <div class="col-lg-12">
     <h2> {{ $data->table_name }}</h2>
+    <h2> Current Permission {{ Auth::user()->level }}</h2>
+    <h2> Dataset Permission {{ $data->table_level }}</h2>
+    @if($data->table_level <> Auth::user()->level)
+        {{ 'Invalid Permission' }}
+    @endif
     <div class="col-lg-12">
         {!! $data->table_html !!}
     </div>
