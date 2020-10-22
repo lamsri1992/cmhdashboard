@@ -15,12 +15,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <span>
-                        สวัสดีคุณ {{ Auth::user()->fullname }}
-                    </span>
-                    <span>
-                        {{ Auth::user()->level }}
-                    </span>
+                    <h5>
+                        สวัสดี :: {{ Auth::user()->fullname }}
+                    </h5>
                 </div>
             </div>
         </div>

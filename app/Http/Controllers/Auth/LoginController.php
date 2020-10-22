@@ -35,8 +35,13 @@ class LoginController extends Controller
         $user = \App\User::where([
             'username' => $request->username,
             'password' => md5($request->password)
-            ])->first();
-        Auth::login($user);
-        return redirect('/home');
+        ])->first();
+
+        if ($user) 
+        {
+            $this->guard()->login($user);
+            return redirect('/home');;
+        }
+        return redirect()->route('login');
     }
 }
