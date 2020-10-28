@@ -63,8 +63,10 @@
     if (val == 'hidden') {
         Swal.fire({
             icon: 'error',
-            title: 'Oops...',
-            text: 'ท่านไม่มีสิทธิ์เข้าถึงข้อมูลรายงานนี้',
+            title: 'คำเตือน',
+            html: '<b>ท่านไม่สามารถเข้าถึงข้อมูลของรายงานนี้ได้</b><br>' +
+                '<span>1. ท่านอาจจะยังไม่ได้ทำการลงชื่อเข้าใช้งาน</span><br> ' +
+                '<span>2. รายงานนี้ต้องใช้สิทธิ์การเข้าถึง</span> ',
             footer: '<small>ระบบจะนำท่านไปยังหน้าหลักใน 5 วินาที</small>',
             allowOutsideClick: false,
             showCancelButton: false,
