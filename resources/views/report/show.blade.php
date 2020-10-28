@@ -1,22 +1,16 @@
 @extends('layouts.master')
 @section('title',"CMH :: DASHBOARD")
 @section('content')
-{{-- u00551 --}}
 <div class="col-lg-12">
-
-
     <h2> {{ $data->table_name }}</h2>
-    <p> Current Permission {{ Auth::user()->dlevel }}</p>
-    <p> Dataset Permission {{ $data->table_level }}</p>
-    
     <?php $array = explode(',',$data->table_level); ?>
     @if(in_array(Auth::user()->dlevel, $array))
-        {{ 'Valid' }}
+        <?php $visible = ''; ?>
     @else
-        {{ 'Invalid' }}
+        <?php $visible = 'hidden'; ?>
     @endif
 
-    <div class="col-lg-12">
+    <div class="col-lg-12" {{ $visible }}>
         {!! $data->table_html !!}
     </div>
 </div>
@@ -63,6 +57,23 @@
             }],
         });
     });
+
+    var val = "<?php echo $visible ?>";
+
+    if (val == 'hidden') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'ท่านไม่มีสิทธิ์เข้าถึงข้อมูลรายงานนี้',
+            footer: '<small>ระบบจะนำท่านไปยังหน้าหลักใน 5 วินาที</small>',
+            allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false
+        })
+        window.setTimeout(function () {
+            location.replace('/dashboard')
+        }, 5000);
+    }
 
 </script>
 @endsection

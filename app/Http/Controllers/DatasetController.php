@@ -37,22 +37,31 @@ class DatasetController extends Controller
      */
     public function show($id)
     {
-        $userID = Auth::user()->id; 
-        $hos = DB::table('sys_member')
-                    ->leftJoin('sys_admin', 'sys_member.username', '=', 'sys_admin.username')
-                    ->leftJoin('chospital', 'sys_member.officename', '=', 'chospital.hoscode')
-                    ->where('sys_admin.id', $userID)
-                    ->first();
-        $hcode = $hos->hoscode;
-        $aumphur = $hos->distcode;
+        if(!isset(Auth::user()->id)){
+            session(['link' => url()->previous()]);
+            return view('auth.login');
+        }else{
+            $userID = Auth::user()->id;
+            $hos = DB::table('sys_member')
+                        ->leftJoin('sys_admin', 'sys_member.username', '=', 'sys_admin.username')
+                        ->leftJoin('chospital', 'sys_member.officename', '=', 'chospital.hoscode')
+                        ->where('sys_admin.id', $userID)
+                        ->first();
 
-        $data = DB::table('table_queries')
-                ->where('table_queries.table_id', $id)
-                ->first();
-        $query = $data->table_query;
-        $query = str_replace('{hcode}',$hcode, $query);
-        $raws = DB::select(DB::raw($query));
-        return view('report.show', ['data' => $data],['raws' => $raws]);
+            $hcode = $hos->hoscode;
+            $aumpher = $hos->distcode;
+    
+            $data = DB::table('table_queries')
+                    ->where('table_queries.table_id', $id)
+                    ->first();
+            $query = $data->table_query;
+
+            $sql = str_replace(array('{hcode}', $hcode), array('{aumpher}', $aumpher), $query);
+
+            $raws = DB::select(DB::raw($sql));
+
+            return view('report.show', ['data' => $data],['raws' => $raws]);
+        }
     }
 
     /**

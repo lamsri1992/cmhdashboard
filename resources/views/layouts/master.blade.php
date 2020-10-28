@@ -37,8 +37,9 @@
         </div>
     </main>
     <br>
-    @include('part.foot')
+    {{-- @include('part.foot') --}}
 </body>
+@include('sweetalert::alert')
 {{-- <script src="{{asset('js/app.js') }}" charset="utf-8"></script> --}}
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -49,6 +50,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @section('script')
 @show
 </head>

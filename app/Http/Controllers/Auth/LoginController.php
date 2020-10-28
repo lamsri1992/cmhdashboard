@@ -40,7 +40,12 @@ class LoginController extends Controller
         if ($user) 
         {
             $this->guard()->login($user);
-            return redirect('/home');;
+            $relink = session(['link' => url()->previous()]);
+            if(!isset($relink)){
+                return redirect(session('link'));
+            }else{
+                return redirect('/home');
+            }
         }
         return redirect()->route('login');
     }
