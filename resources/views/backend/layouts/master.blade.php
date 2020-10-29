@@ -47,7 +47,7 @@
     {{-- @include('backend.part.foot') --}}
 </body>
 @include('sweetalert::alert')
-<script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
+{{-- <script src="{{ asset('js/app.js') }}" charset="utf-8"></script> --}}
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>

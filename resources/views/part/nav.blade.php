@@ -44,12 +44,18 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->fullname }}
+                            <i class="fa fa-user-circle"></i> {{ Auth::user()->fullname }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if(Auth::user()->dlevel==3)
+                                <a class="dropdown-item" href="backend"><i class="fa fa-user-cog"></i>
+                                    สำหรับผู้ดูแลระบบ
+                                </a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                <i class="fa fa-sign-out-alt"></i>
+                                {{ __('ออกจากระบบ') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                 class="d-none">

@@ -64,17 +64,30 @@
         Swal.fire({
             icon: 'error',
             title: 'คำเตือน',
-            html: '<b>ท่านไม่สามารถเข้าถึงข้อมูลของรายงานนี้ได้</b><br>' +
-                '<span>1. ท่านอาจจะยังไม่ได้ทำการลงชื่อเข้าใช้งาน</span><br> ' +
-                '<span>2. รายงานนี้ต้องใช้สิทธิ์การเข้าถึง</span> ',
-            footer: '<small>ระบบจะนำท่านไปยังหน้าหลักใน 5 วินาที</small>',
+            html: '<p style="font-weight:bold;">ท่านไม่สามารถเข้าถึงข้อมูลของรายงานนี้ได้</p>' +
+                '<p>1. ท่านอาจจะยังไม่ได้ทำการลงชื่อเข้าใช้งาน</p>' +
+                '<p>2. รายงานนี้ต้องใช้สิทธิ์การเข้าถึง</p>',
+            footer: '<small>ระบบจะนำท่านไปยังหน้าหลักใน <input type="text" id="counter" style="text-align:center;color:red;" size="1" readonly> วินาที</small>',
             allowOutsideClick: false,
             showCancelButton: false,
             showConfirmButton: false
         })
+        var seconds = 6;
+        document.getElementById("counter").value = '6';
+
+        function display() {
+            seconds -= 1;
+            if (seconds == -1) {
+                return;
+            }
+            document.getElementById("counter").value = seconds;
+            setTimeout("display()",
+                1000);
+        }
+        display();
         window.setTimeout(function () {
             location.replace('/dashboard')
-        }, 5000);
+        }, 6000);
     }
 
 </script>
