@@ -7,7 +7,7 @@
     <h2>{{ $dashboard->sub_name }}</h2>
     <div class="col-lg-12" style="text-align: center;margin: 0 auto">
         <iframe width="{{ $dashboard->sub_width }}" height="{{ $dashboard->sub_height }}"
-            src="{{ $dashboard->sub_src }}" frameborder="0" style="border:0" allowfullscreen>
+            src="{{ $dashboard->sub_src }}" frameborder="0" style="border:0" scrolling="no" allowfullscreen>
         </iframe>
     </div>
 </div>
