@@ -15,7 +15,7 @@
         <table id="example" class="table table-border table-striped" style="width:100%">
             <thead class="thead-dark">
                 <tr>
-                    <th class="text-center">ID</th>
+                    <th class="text-center">ORDER</th>
                     <th>Dashboard Group</th>
                     <th class="text-center">Status</th>
                     <th class="text-center"><i class="fa fa-edit"></i></th>
@@ -24,7 +24,11 @@
             <tbody>
                 @foreach($response as $result)
                     <tr>
-                        <td class="text-center">{{ $result->group_id }}</td>
+                        <td class="text-center" width="2%">
+                            <span style="font-size: 13px;"
+                                class="badge badge-pill badge-danger btn-block">{{ $result->group_order }}
+                            </span>
+                        </td>
                         <td>{{ $result->group_name }}</td>
                         <td class="text-center">
                             @if($result->group_active=='Y')
@@ -33,7 +37,8 @@
                                 <?php $badge = "danger"; $text = "ปกปิด"; ?>
                             @endif
                             <span style="font-size: 13px;" class="badge badge-pill badge-{{ $badge }}">
-                                {{ $text }}</span>
+                                {{ $text }}
+                            </span>
                         </td>
                         <td class="text-center">
                             <a href="{{ route('backend.menu_show',$result->group_id) }}">
@@ -50,7 +55,7 @@
 <!-- AddMenuModal -->
 <form id="addMenu">
     <div class="modal fade" id="MenuModal" tabindex="-1" role="dialog" aria-labelledby="MenuModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="MenuModal"><i class="fa fa-plus-circle"></i> เพิ่มเมนูหลัก</h5>
@@ -60,14 +65,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">ชื่อเมนู</label>
-                        <div class="col-sm-10">
+                        <label for="" class="col-sm-3 col-form-label">ชื่อเมนู</label>
+                        <div class="col-sm-9">
                             <input type="text" name="group_name" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-2 col-form-label">สถานะ</label>
-                        <div class="col-sm-10">
+                        <label for="" class="col-sm-3 col-form-label">ลำดับการแสดงผล</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="group_order" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">สถานะ</label>
+                        <div class="col-sm-9">
                             <select name="group_active" class="custom-select mr-sm-2" required>
                                 <option value="">เลือก...</option>
                                 <option value="Y">แสดง</option>

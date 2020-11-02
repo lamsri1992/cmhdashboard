@@ -13,6 +13,10 @@
             <label for="">ชื่อเมนูหลัก</label>
             <input type="text" name="group_name" class="form-control" value="{{ $data->group_name }}">
         </div>
+        <div class="form-group">
+            <label for="">ลำดับการแสดงผล</label>
+            <input type="number" name="group_order" class="form-control" value="{{ $data->group_order }}">
+        </div>
         @if($data->group_active == 'N')
             <?php $check = "SELECTED"; ?>
         @else

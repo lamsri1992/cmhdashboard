@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menuItems = \App\Models\MenuItem::where('group_active', 'Y')->get();
+        $menuItems = \App\Models\MenuItem::where('group_active', 'Y')->orderBy('group_order', 'ASC')->get();
         view()->share('menuItems', $menuItems);
 
         $subItems = \App\Models\SubItem::where('sub_active', 'Y')->orderBy('sub_order', 'ASC')->get();

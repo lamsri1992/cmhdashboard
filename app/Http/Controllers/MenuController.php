@@ -30,6 +30,7 @@ class MenuController extends Controller
         DB::table('menu_items')->insert(
             [
                 'group_name' => $request->get('group_name'),
+                'group_order' => $request->get('group_order'),
                 'group_active' => $request->get('group_active')
             ]
         );
@@ -61,6 +62,7 @@ class MenuController extends Controller
         DB::table('menu_items')->where('group_id', $id)->update(
             [
                 'group_name' => $request->get('group_name'),
+                'group_order' => $request->get('group_order'),
                 'group_active' => $request->get('group_active')
             ]
         );
