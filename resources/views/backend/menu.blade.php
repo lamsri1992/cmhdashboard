@@ -15,7 +15,7 @@
         <table id="example" class="table table-border table-striped" style="width:100%">
             <thead class="thead-dark">
                 <tr>
-                    <th class="text-center">ORDER</th>
+                    <th class="text-center">Order</th>
                     <th>Dashboard Group</th>
                     <th class="text-center">Status</th>
                     <th class="text-center"><i class="fa fa-edit"></i></th>
