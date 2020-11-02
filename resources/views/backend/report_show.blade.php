@@ -32,9 +32,11 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-6">
+                <label for="">กำหนดความกว้าง</label>
                 <input type="text" name="sub_width" class="form-control" value="{{ $data->sub_width }}" required>
             </div>
             <div class="col-sm-6">
+                <label for="">กำหนดความสูง</label>
                 <input type="text" name="sub_height" class="form-control" value="{{ $data->sub_height }}" required>
             </div>
         </div>
