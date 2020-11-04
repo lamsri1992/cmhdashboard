@@ -47,17 +47,14 @@ class DatasetController extends Controller
                         ->leftJoin('chospital', 'sys_member.officename', '=', 'chospital.hoscode')
                         ->where('sys_admin.id', $userID)
                         ->first();
-
-            $hcode = $hos->hoscode;
+            $hcode = $hos->officename;
             $aumpher = $hos->distcode;
-    
             $data = DB::table('table_queries')
                     ->where('table_queries.table_id', $id)
                     ->first();
             $query = $data->table_query;
-
-            $sql = str_replace(array('{hcode}', $hcode), array('{aumpher}', $aumpher), $query);
-
+            $sql = str_replace('{hcode}',$hcode, $query);
+            // $sql = str_replace('{aumpher}',$aumpher, $query);
             $raws = DB::select(DB::raw($sql));
 
             return view('report.show', ['data' => $data],['raws' => $raws]);
