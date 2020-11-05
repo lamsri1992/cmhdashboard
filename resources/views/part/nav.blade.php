@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="#">
             <img src="https://cmbis.chiangmaihealth.go.th/web/img/chiangmaihealth.ico" width="30" height="30"
                 class="d-inline-block align-top">
-            CM <span class="text-success"> Dashboard</span>
+            CMH : <small class="text-success"> Dashboard</small>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +18,10 @@
                 @foreach($menuItems as $item)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                             {{ $item->group_name }}
                         </a>
-                        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="navbarDropdownMenuLink">
                             @foreach($subItems as $subitem)
                                 @if($item->group_id == $subitem->sub_group)
                                     <a class="dropdown-item"
