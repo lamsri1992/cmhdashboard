@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-3">
+<footer class="footer mt-auto py-3" style="margin-top: 4rem !important;">
     <div class="container" style="padding-top: 1%;">
         <p class="pull-left text-secondary copyright">CM - DASHBOARD</p>
         <hr>
