@@ -62,6 +62,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @section('script')
 @show
+@include('part.foot')
 </head>
 
 </html>

@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
@@ -38,6 +38,24 @@
     --font-family-sans-serif: "Nunito", sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
+}
+
+.cm {
+    font-weight: bold;
+}
+.navbar-brand {
+    /* padding-top: 1rem !important; */
+    line-height: 1.6 !important;
+}
+
+footer hr {
+    width: 70%;
+}
+footer .copyright {
+    text-align: center;
+    justify-content: center;
+    display: block;
+    text-shadow: 1px 2px 3px rgb(149 149 149 / 40%);
 }
 
 *,
@@ -4945,7 +4963,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
